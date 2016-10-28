@@ -1,5 +1,3 @@
-var mainApp = angular.module("mainApp", []);
-
 mainApp.controller('studentController', function($scope){
 
 	$scope.student = {

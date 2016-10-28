@@ -1,0 +1,55 @@
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS FOrms</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller="studentController">
+			<form name="studentForm" novalidate>
+				<table border="0">
+					<tr>
+						<td>Enter first name:</td>
+						<td>
+							<input name="firstName" type="text" ng-model="student.firstName" required />
+							<span ng-show="studentForm.firstName.$error.required">First Name is required.</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Enter last name:</td>
+						<td>
+							<input name="lastName" type="text" ng-model="student.lastName" required />
+							<span ng-show="studentForm.lastName.$error.required">Last Name is required.</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td>
+							<input name="email" type="email" ng-model="student.email" required />
+							<span ng-show="studentForm.email.$error.required">Email is required.</span>
+							<span ng-show="studentForm.email.$error.email">Email is invalid.</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button ng-click="reset()">Reset</button>
+						</td>
+						<td>
+							<button ng-disabled="
+								studentForm.firstName.$dirty && studentForm.firstName.$invalid ||
+								studentForm.lastName.$dirty && studentForm.lastName.$invalid ||
+								studentForm.email.$dirty && studentForm.email.$invalid" ng-click="submit()">Submit</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "./mainApp.js"></script>
+		<script src = "./student.controller.js"></script>
+	</body>
+</html>
