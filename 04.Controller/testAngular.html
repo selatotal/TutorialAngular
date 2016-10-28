@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>AngularJS Controller</title>
+	</head>
+
+	<body>
+		<h1>Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller="studentController">
+			<p>Enter first name: <input type="text" ng-model="student.firstName" /></p>
+			<p>Enter last name: <input type="text" ng-model="student.lastName" /></p>
+			<p>You are entering: {{ student.fullName() }}</p>
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "./student.controller.js"></script>
+	</body>
+</html>
