@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>AngularJS Filters</title>
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller="studentController">
+			<table border="0">
+				<tr>
+					<td>Enter first name:</td>
+					<td><input type="text" ng-model="student.firstName" /></td>
+				</tr>
+				<tr>
+					<td>Enter last name:</td>
+					<td><input type="text" ng-model="student.lastName" /></td>
+				</tr>
+				<tr>
+					<td>Enter fees:</td>
+					<td><input type="text" ng-model="student.fees" /></td>
+				</tr>
+				<tr>
+					<td>Enter subject:</td>
+					<td><input type="text" ng-model="subjectName" /></td>
+				</tr>
+			</table>
+			<br />
+			<table>
+				<tr>
+					<td>Name in Upper Case:</td>
+					<td>{{ student.firstName | uppercase }}</td>
+				</tr>
+				<tr>
+					<td>Name in Lower Case:</td>
+					<td>{{ student.firstName | lowercase }}</td>
+				</tr>
+				<tr>
+					<td>Fees:</td>
+					<td>{{ student.fees | currency }}</td>
+				</tr>
+				<tr>
+					<td>Subject:</td>
+					<td>
+						<ul>
+							<li ng-repeat="subject in student.subjects | filter: subjectName | orderBy: 'marks'">
+								{{ subject.name +  ', marks: ' + subject.marks }}
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "./student.controller.js"></script>
+	</body>
+</html>
