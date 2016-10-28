@@ -1,0 +1,35 @@
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Views</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" >
+			<p><a href="#addStudent">Add Student</a></p>
+			<p><a href="#viewStudents">View Students</a></p>
+
+			<div ng-view></div>
+
+			<script type="text/ng-template" id="viewStudents.html">
+				<h2>View Students</h2>
+				{{message}}
+			</script>
+
+			<script type="text/ng-template" id="addStudent.html">
+				<h2>Add Student</h2>
+				{{message}}
+			</script>
+
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+		<script src = "./mainApp.js"></script>
+		<script src = "./addStudent.controller.js"></script>
+		<script src = "./viewStudents.controller.js"></script>
+	</body>
+</html>
