@@ -1,0 +1,29 @@
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Scopes</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller = "shapeController">
+			<p>{{message}}<br/>{{type}}</p>
+			<div ng-controller="circleController">
+				<p>{{message}}<br/>{{type}}</p>
+			</div>
+
+			<div ng-controller="squareController">
+				<p>{{message}}<br/>{{type}}</p>
+			</div>
+
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "./mainApp.js"></script>
+		<script src = "./shape.controller.js"></script>
+		<script src = "./circle.controller.js"></script>
+		<script src = "./square.controller.js"></script>
+	</body>
+</html>
