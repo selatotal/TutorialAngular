@@ -20,4 +20,4 @@ mainApp.directive('student', function() {
 
 	return directive;
 
-})
+});

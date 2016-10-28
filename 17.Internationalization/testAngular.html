@@ -1,0 +1,22 @@
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Internationalization</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller = "StudentController">
+			{{ fees | currency }}<br/><br/>
+			{{ admissionDate | date }}<br/><br/>
+			{{ rollno | number }}
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "https://code.angularjs.org/1.5.8/i18n/angular-locale_pt-br.js"></script>
+		<script src = "./mainApp.js"></script>
+		<script src = "./student.controller.js"></script>
+	</body>
+</html>
