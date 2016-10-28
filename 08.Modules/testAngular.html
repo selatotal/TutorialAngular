@@ -1,0 +1,47 @@
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Modules</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body>
+		<h1>AngularJS Sample Application</h1>
+
+		<div ng-app="mainApp" ng-controller="studentController">
+			<table border="0">
+				<tr>
+					<td>Enter first name:</td>
+					<td><input type="text" ng-model="student.firstName" /></td>
+				</tr>
+				<tr>
+					<td>Enter last name:</td>
+					<td><input type="text" ng-model="student.lastName" /></td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td>{{ student.fullName() }}</td>
+				</tr>
+				<tr>
+					<td>Subject:</td>
+					<td>
+						<table>
+							<tr>
+								<th>Name</th>
+								<th>Marks</th>
+							</tr>
+							<tr ng-repeat = "subject in student.subjects">
+								<td>{{ subject.name }}</td>
+								<td>{{ subject.marks }}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src = "./mainApp.js"></script>
+		<script src = "./student.controller.js"></script>
+	</body>
+</html>
